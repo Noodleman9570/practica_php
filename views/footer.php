@@ -1,28 +1,5 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>PRACTICA_I</title>
-  <link rel="stylesheet" href="./style.css">
-
-</head>
-<body>
-<!-- partial:index.partial.html -->
-<div class="container">
-        <div class="slide-bar" id="slidebar">
-            <div class="bar" id="bar"></div>
-        </div>
-        <div class="text-block" id="textone">
-            <h1>VAMOS QUE SI</h1>
-        </div>
-        <div class="text-block" id="texttwo">
-            <h1>INGENIEROS</h1>
-        </div>
-    </div>
-
-    <button id="changeBtn">&nbsp;</button>
 <!-- partial -->
-  <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js'></script>
 <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CustomEase3.min.js'></script>
 <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin3.min.js'></script>
 <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/ScrambleTextPlugin3.min.js'></script>
