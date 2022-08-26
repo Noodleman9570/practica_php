@@ -1,5 +1,7 @@
 <?php
 
+require_once 'controllers/errores.php';
+
 class App {
 
     function __construct()
@@ -13,7 +15,7 @@ class App {
             $controllerFile = 'controllers/login.php';
             require_once $controllerFile;
             $controller = new Login();
-            // $controller->loadModel('login');
+            $controller->loadModel('login');
             $controller->render();
             return false;
         }
@@ -52,6 +54,8 @@ class App {
             
         } else {
             // no existe el archivo, manda error
+            $controller = new Errores();
+            $controller->render();
         }
         
     }
