@@ -44,6 +44,7 @@ class App {
                     }
                 } else {
                     // error, no existe el metodo
+                    $controller = new Errores();
                 }
             } else {
                 $controller->render();
