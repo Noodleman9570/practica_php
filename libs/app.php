@@ -8,12 +8,12 @@ class App {
         $url = rtrim($url, '/');
         $url = explode('/', $url);
 
-        if(empty($url[0])){
+        if(empty($url[0])){ // si no existe el archivo carga el controlador login
             error_log('APP::construct-> no hay controlador especificado');
-            $controllerFile = 'controllers/Login.php';
+            $controllerFile = 'controllers/login.php';
             require_once $controllerFile;
             $controller = new Login();
-            $controller->loadModel('login');
+            // $controller->loadModel('login');
             $controller->render();
             return false;
         }
@@ -34,7 +34,7 @@ class App {
                         $params = [];
 
                         for ($i=0; $i < $nparam; $i++) { 
-                            array_push($params, $url[$i] + 2);
+                            array_push($params, $url[$i + 2]);
                         }
 
                         $controller->{$url[1]}($params);
