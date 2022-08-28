@@ -144,6 +144,35 @@ class UserModel extends Model implements IModel{
         $this->name     = $array['name'];
     }
 
+    public function exists($username)
+    {
+        try {
+            $query = $this->prepare('SELECT username FROM users WHERE usernam = :username');
+            $query->execute(['username' => $username]);
+            if ($query->rowCount() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            error_log('USERMODEL::getId->PDOException '. $e);
+            return false;
+        }
+    }
+
+    public function comparePassword($password, $id)
+    {
+        try {
+            $user = $this->get($id);
+
+            return password_verify($password, $user->getPassword());
+            
+        } catch (PDOException $e) {
+            error_log('USERMODEL::exists->PDOException '. $e);
+            return false;
+        }
+    }
+
     public function setId($id){             $this->id = $id;}
     public function setUsername($usrn){     $this->username = $usrn;}
     public function setRole($role){         $this->role = $role;}
