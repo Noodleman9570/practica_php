@@ -129,7 +129,7 @@ class UserModel extends Model implements IModel{
             return true;
 
         } catch (PDOException $e) {
-            error_log('USERMODEL::getId->PDOException '. $e);
+            error_log('USERMODEL::update->PDOException '. $e);
             return false;
         }
     }
@@ -155,7 +155,7 @@ class UserModel extends Model implements IModel{
                 return false;
             }
         } catch (PDOException $e) {
-            error_log('USERMODEL::getId->PDOException '. $e);
+            error_log('USERMODEL::exists->PDOException '. $e);
             return false;
         }
     }
@@ -168,7 +168,7 @@ class UserModel extends Model implements IModel{
             return password_verify($password, $user->getPassword());
             
         } catch (PDOException $e) {
-            error_log('USERMODEL::exists->PDOException '. $e);
+            error_log('USERMODEL::comparePassword->PDOException '. $e);
             return false;
         }
     }

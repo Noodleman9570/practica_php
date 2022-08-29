@@ -3,13 +3,15 @@
 class SuccessMessages{
 
     const PRUEBA = "2333";
+    const SUCCESS_SIGNUP_NEWUSER = "sd4DVEl681d94aeSF41a3ab7c6f7SSdt4";
 
     private $successList = [];
 
     public function __construct()
     {
         $this->successList = [
-            SuccessMessages::PRUEBA => 'Este es un mensage de exito'
+            SuccessMessages::PRUEBA => 'Este es un mensage de exito',
+            SuccessMessages::SUCCESS_SIGNUP_NEWUSER => 'El usuario ha sido registrado exitosamente'
         ];
     }
 
