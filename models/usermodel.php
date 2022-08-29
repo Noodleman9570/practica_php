@@ -133,6 +133,7 @@ class UserModel extends Model implements IModel{
             return false;
         }
     }
+    
     public function from($array)
     {
         $this->id       = $array['id'];
@@ -166,7 +167,7 @@ class UserModel extends Model implements IModel{
             $user = $this->get($id);
 
             return password_verify($password, $user->getPassword());
-            
+
         } catch (PDOException $e) {
             error_log('USERMODEL::comparePassword->PDOException '. $e);
             return false;
