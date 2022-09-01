@@ -148,7 +148,7 @@ class UserModel extends Model implements IModel{
     public function exists($username)
     {
         try {
-            $query = $this->prepare('SELECT username FROM users WHERE usernam = :username');
+            $query = $this->prepare('SELECT username FROM users WHERE username = :username');
             $query->execute(['username' => $username]);
             if ($query->rowCount() > 0) {
                 return true;
@@ -183,7 +183,7 @@ class UserModel extends Model implements IModel{
 
     public function setPassword($pass)
     {     
-        $this->pasword = $this->getHashedPassword($pass);
+        $this->password = $this->getHashedPassword($pass);
     }
 
     public function getId(){                return $this->id;}

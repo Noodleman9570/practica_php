@@ -14,5 +14,9 @@ class Login extends SessionController{
         $this->view->render('login/index');
     }
 
+    function authenticate(){
+        
+    }
+
 }
 

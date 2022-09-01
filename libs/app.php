@@ -8,6 +8,12 @@ class App {
     {
         $url = isset($_GET['url']) ? $_GET['url'] : null;
         $url = rtrim($url, '/');
+        //var_dump($url);
+        /*
+            controlador->[0]
+            metodo->[1]
+            parameter->[2]
+        */
         $url = explode('/', $url);
 
         if(empty($url[0])){ // si no existe el archivo carga el controlador login
@@ -24,9 +30,11 @@ class App {
         if (file_exists($controllerFile)) {
             require_once $controllerFile;
 
+            // inicializar controlador
             $controller = new $url[0];
             $controller->loadModel($url[0]);
 
+            // si hay un método que se requiere cargar
             if (isset($url[1])) {
                 if(method_exists($controller, $url[1])){
                     if(isset($url[2])){
@@ -51,11 +59,10 @@ class App {
             } else {
                 $controller->render();
             }
-            
+           
         } else {
             // no existe el archivo, manda error
             $controller = new Errores();
-            $controller->render();
         }
         
     }

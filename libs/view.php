@@ -30,7 +30,7 @@ class View {
     private function handleError() // validacion y almacenaje de errors
     {
         $hash = $_GET['error'];
-        $error = new ErrorMessages();
+        $error = new Errors();
 
         if($error->existsKey($hash)){
             $this->d['error'] = $error->get($hash);
@@ -40,7 +40,7 @@ class View {
     private function handleSuccess() // validacion y almacenaje de success
     {
         $hash = $_GET['success'];
-        $success = new SuccessMessages();
+        $success = new Success();
 
         if ($success->existsKey($hash)) {
             $this->d['success'] = $success->get($hash);
@@ -56,6 +56,7 @@ class View {
     public function showErrors() // validacion y renderizacion de errors
     {
         if (array_key_exists('error', $this->d)) {
+            error_log($this->d['error']);
             echo '<div class="error">'.$this->d['error'].'</div>';
         }
     }
@@ -63,6 +64,7 @@ class View {
     public function showSuccess() // validacion y renderizacion de success
     {
         if (array_key_exists('success', $this->d)) {
+            error_log($this->d['success']);
             echo '<div class="success">'.$this->d['success'].'</div>';
         }
     }

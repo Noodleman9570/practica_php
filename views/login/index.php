@@ -4,11 +4,22 @@
   <meta charset="UTF-8">
   <title>LOGIN CINEMAWEB</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-<link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
-<link rel="stylesheet" href="../../public/css/stylelogin.css">
+  <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="<?= URL; ?>/public/css/stylelogin.css">
 
 </head>
+<style>
+  body{
+  background-image:url('<?= URL; ?>/public/img/fonfo.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: rgb(0, 0, 0);
+
+}
+</style>
 <body>
+  <?php $this->showMessages(); ?>
   <div><br><br><br><br></div>
 <!-- partial:index.partial.html -->
 <div class="login-box">
@@ -23,44 +34,41 @@
       </a>
       <a href="#">
         <i class="fa fa-google-plus fa-lg"></i>
-        Iniciar con Google
+        Iniciar con Goog`le
       </a>
     </div>
     <form class="email-login">
       <div class="u-form-group">
-        <input type="email" placeholder="ejemplo@gmail.com"/>
+        <input type="email" placeholder="Email"/>
       </div>
       <div class="u-form-group">
-        <input type="password" placeholder="Contraseña"/>
+        <input type="password" placeholder="Password"/>
       </div>
       <div class="u-form-group">
-        <button>Entrar</button>
+        <button>Log in</button>
       </div>
       <div class="u-form-group">
-        <a href="#" class="forgot-password"> Olvido Contraseña?</a>
+        <a href="#" class="forgot-password">Forgot password?</a>
       </div>
       <div class="u-form-group">
-        <a href="index.html" class="forgot-password">Salir</a>
+        <a href="index.html" class="forgot-password">Exit?</a>
       </div>
     </form>
-    <form class="email-signup">
+    <form action="signup/newUser" class="email-signup" method="POST">
       <div class="u-form-group">
-        <input type="email" placeholder="Correo"/>
+        <input name="username" type="text" placeholder="usuario"/>
       </div>
       <div class="u-form-group">
-        <input type="password" placeholder="Contraseña"/>
+        <input name="password" type="password" placeholder="Contraseña"/>
       </div>
       <div class="u-form-group">
-        <input type="password" placeholder="Confirmar Contraseña"/>
-      </div>
-      <div class="u-form-group">
-        <button>Registrarse</button>
+        <button type="submit">Registrarse</button>
       </div>
     </form>
   </div>
 <!-- partial -->
   <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-  <script  src="../../public/js/scriptlogin.js"></script>
+  <script  src="<?= URL; ?>/public/js/scriptlogin.js"></script>
 
 </body>
 </html>
