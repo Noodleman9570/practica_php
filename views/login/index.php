@@ -37,7 +37,7 @@
         Iniciar con Goog`le
       </a>
     </div>
-    <form class="email-login">
+    <form action="<?= constant('URL'); ?>/login/authenticate" class="email-login" method="POST">
       <div class="u-form-group">
         <input type="email" placeholder="Email"/>
       </div>

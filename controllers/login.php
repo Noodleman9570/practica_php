@@ -15,7 +15,23 @@ class Login extends SessionController{
     }
 
     function authenticate(){
-        
+        if($this->existPOST(['username', 'password'])){
+            $username = $this->getPOST('username');
+            $password = $this->getPOST('password');
+
+            if($username == '' || empty($username) || $password == '' || empty($password)){
+                $this->redirect('', ['error' => Errors::ERROR_LOGIN_AUTHENTICATE_EMPTY]);
+            }
+            $user = $this->model->login($username, $password);
+
+            if($user != NULL){
+                $this->initialize($user);
+            } else {
+                $this->redirect('', ['error' => Errors::ERROR_LOGIN_AUTHENTICATE_DATA]);
+            }
+        } else {
+            $this->redirect('', ['error' => Errors::ERROR_LOGIN_AUTHENTICATE]);
+        }
     }
 
 }
