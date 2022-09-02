@@ -6,7 +6,7 @@ class SessionController extends Controller{
 
     private $userSession;
     private $username;
-    private $userId;
+    private $userid;
 
     private $session;
     private $sites;
@@ -167,7 +167,7 @@ class SessionController extends Controller{
             break;
             }
         }
-        header('location: '.$url);
+        header('location: ' . $url);
         
     }
 

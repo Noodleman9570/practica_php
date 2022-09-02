@@ -31,6 +31,7 @@ class App {
             require_once $controllerFile;
 
             // inicializar controlador
+            $url[0] = ucfirst($url[0]);
             $controller = new $url[0];
             $controller->loadModel($url[0]);
 

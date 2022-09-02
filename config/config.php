@@ -1,7 +1,7 @@
 <?php
 
 // Definicion de constante globales de todo el proyecto
-define('URL', 'http://localhost/practica_php/'); // Cambiar 192.168.1.2 por localhost si estan usando xampp
+define('URL', 'http://192.168.1.2/practica_php/'); // Cambiar 192.168.1.2 por localhost si estan usando xampp
 
 // Base de datos local mi pc kevin
 define('HOST', '192.168.1.2:3306');

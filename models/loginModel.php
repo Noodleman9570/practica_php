@@ -9,6 +9,8 @@ class LoginModel extends Model{
 
     function login($username, $password)
     {
+        //insertar datos en la DB
+        error_log("Login: inicio");
         try {
             $query = $this->prepare('SELECT * FROM users WHERE username = :username');
             $query->execute(['username' => $username]);

@@ -57,7 +57,7 @@ class View {
     {
         if (array_key_exists('error', $this->d)) {
             error_log($this->d['error']);
-            echo '<div class="error">'.$this->d['error'].'</div>';
+            echo '<div class="status_message error">'.$this->d['error'].'</div>';
         }
     }
 
@@ -65,7 +65,7 @@ class View {
     {
         if (array_key_exists('success', $this->d)) {
             error_log($this->d['success']);
-            echo '<div class="success">'.$this->d['success'].'</div>';
+            echo '<div class="status_message success">'.$this->d['success'].'</div>';
         }
     }
 }

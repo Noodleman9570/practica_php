@@ -19,7 +19,7 @@
 }
 </style>
 <body>
-  <?php $this->showMessages(); ?>
+    <?php $this->showMessages(); ?>
   <div><br><br><br><br></div>
 <!-- partial:index.partial.html -->
 <div class="login-box">
@@ -34,18 +34,18 @@
       </a>
       <a href="#">
         <i class="fa fa-google-plus fa-lg"></i>
-        Iniciar con Goog`le
+        Iniciar con Google
       </a>
     </div>
-    <form action="<?= constant('URL'); ?>/login/authenticate" class="email-login" method="POST">
+    <form action="<?= constant('URL'); ?>login/authenticate" class="email-login" method="POST">
       <div class="u-form-group">
-        <input type="email" placeholder="Email"/>
+        <input name="username" type="text" placeholder="Email"/>
       </div>
       <div class="u-form-group">
-        <input type="password" placeholder="Password"/>
+        <input name="password" type="password" placeholder="Password"/>
       </div>
       <div class="u-form-group">
-        <button>Log in</button>
+        <button type="submit">Log in</button>
       </div>
       <div class="u-form-group">
         <a href="#" class="forgot-password">Forgot password?</a>

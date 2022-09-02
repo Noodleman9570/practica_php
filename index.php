@@ -8,7 +8,7 @@
 
     ini_set('log_errors', TRUE);
 
-    ini_set("error_log", "php-error.log");
+    ini_set("error_log", "/tmp/php-error.log");
 
     error_log("Inicio de aplicacion");
 

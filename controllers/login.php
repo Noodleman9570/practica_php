@@ -1,5 +1,7 @@
 <?php
 
+require_once 'models/loginModel.php';
+
 class Login extends SessionController{
 
     function __construct()
@@ -22,7 +24,9 @@ class Login extends SessionController{
             if($username == '' || empty($username) || $password == '' || empty($password)){
                 $this->redirect('', ['error' => Errors::ERROR_LOGIN_AUTHENTICATE_EMPTY]);
             }
-            $user = $this->model->login($username, $password);
+
+            $login = new LoginModel;
+            $user = $login->login($username, $password);
 
             if($user != NULL){
                 $this->initialize($user);

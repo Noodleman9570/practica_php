@@ -121,3 +121,12 @@ box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
   font-size: 0.75rem;
 }
 
+.status_message {
+  display: grid;
+  grid-template-columns: 1fr;
+  background: #358efb;
+  height: 40px;
+  border-radius: 10px;
+  justify-items: center;
+  align-items: center;
+}
