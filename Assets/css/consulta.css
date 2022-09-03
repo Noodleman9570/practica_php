@@ -1,0 +1,27 @@
+.toggle {
+    display: none;
+    transition: .5s ease all;
+}
+
+.togg {
+    color: green;
+    border: 3px solid green;
+}
+.btn-c {
+    height: 55px ;
+}
+
+.btn-e {
+    display: none;
+    height: 55px ;
+}
+
+.pull-left{
+    transition: .5s ease all;
+}
+
+@media (max-width: 992) {
+    .consultForm{
+        width: 2000px !important;
+    }
+}

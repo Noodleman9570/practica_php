@@ -1,0 +1,26 @@
+
+.jumbotron {
+	padding: 20px 50px ;
+}
+
+.d-block {
+	object-fit: cover;
+	height: 600px;
+}
+
+.carousel-indicators {
+	z-index: 2;
+}
+
+@media screen and (max-width: 1000px) {
+	.display-4{
+		font-size:2em;
+	}
+	.jumbotron {
+		padding: 20px 15px ;
+	}
+	.d-block {
+		height: 400px;
+	}
+
+}

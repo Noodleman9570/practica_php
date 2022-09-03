@@ -1,0 +1,77 @@
+.tile{
+    border-radius: 10px;
+    position: relative;
+}
+button {
+    border-radius: 5px !important;
+}
+.dataTables_length{
+    width: 1fr;
+    display: inline;
+}
+.dt-buttons{
+    display: inline;
+    margin-left: 20px;
+    width: 100%;
+}
+.dt-buttons button{
+    width: 50px;
+    margin: 10px 5px;
+}
+.dataTables_filter{
+    position: absolute;
+    top: 14px;
+    right: 0;
+    display: inline;
+}
+button {
+    border-radius: 5px !important;
+}
+thead{
+    background: #ddeeed;
+    height: 60px;
+}
+
+tbody tr:nth-child(odd){
+    background-color: rgb(248, 248, 248);
+}
+tbody tr:nth-child(even){
+    background-color: rgb(238, 238, 238);
+}
+tbody tr:hover{
+    background: rgb(255, 255, 255);
+}
+
+tbody tr td{
+    margin: 20px 10px;
+}
+tbody tr td:nth-child(9){
+    width: 6.5vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+tbody tr td:nth-child(9) div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.btn__container button {
+    margin: 0 18px;
+    height: 50px;
+    font-size: medium;
+}
+
+@media(max-width: 450px) {
+    .dt-buttons{
+        width: auto;
+        display: block;
+    }
+}
+@media(max-width: 930px){
+    .dataTables_filter{
+        position: unset;
+    }
+}

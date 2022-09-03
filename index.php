@@ -1,39 +1,37 @@
 <?php
+    session_start();
+    // session_destroy();
+    require_once("Config/Config.php");
+    require_once("Helpers/Helpers.php");
+    $url = !empty($_GET['url']) ? $_GET['url'] : CONTROLLER_DEFAULT."/".METHOD_DEFAULT;
+    $arrUrl = explode("/", $url);
+    $controller = $arrUrl[0];
+    $method = $arrUrl[0];
+    $params = "";
 
-    error_reporting(E_ALL);
+    if(!empty($arrUrl[1]))
+    {
+        if($arrUrl[1] != "");
+        {
+            $method = $arrUrl[1];
+        }
+    }
 
-    ini_set('ignore_repeated_errors', TRUE);
+    if(!empty($arrUrl[2]))
+    {
+        if($arrUrl[2] != "")
+        {
+            for ($i=2; $i < count($arrUrl); $i++) { 
+                $params .= $arrUrl[$i].',';
+            }
+            $params = trim($params, ',');
+        }
+    }
 
-    ini_set('display_errors', FALSE);
+    require_once("Libraries/Core/Autoload.php");
 
-    ini_set('log_errors', TRUE);
-
-    ini_set("error_log", "/tmp/php-error.log");
-
-    error_log("Inicio de aplicacion");
-
-//tail -f /tmp/php-error.log
-require_once 'libs/database.php';
-require_once 'libs/messages.php';
-
-require_once 'libs/controller.php';
-require_once 'libs/view.php';
-require_once 'libs/model.php';
-require_once 'libs/app.php';
-
-
-require_once 'classes/session.php';
-require_once 'classes/sessionController.php';
-require_once 'classes/errors.php';
-require_once 'classes/success.php';
+    require_once("Libraries/Core/Load.php");
 
 
-require_once 'config/config.php';
-
-include_once 'models/usermodel.php';
-
-$app = new App();
 
 ?>
-
-
