@@ -22,7 +22,7 @@
         $format .= print_r('</pre>');
         return $format;
     }
-    function getFavicon()
+    function get_favicon()
     {
         $path = FAVICON;
         $favicon = SITE_FAVICON;

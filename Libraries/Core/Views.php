@@ -6,9 +6,11 @@
         {
             $controller = get_class($controller);
             if($controller == "Home"){
-                $view = "Views/".$view.".php";
+                error_log("Views::Cargando la vista de -> $view");
+                $view = "Views/".lcfirst($view).".php";
             }else{
-                $view = "Views/".$controller."/".$view.".php";
+                error_log("Views::Cargando la vista de -> $view");
+                $view = "Views/".$controller."/".lcfirst($view).".php";
             }
             require_once($view);
         }

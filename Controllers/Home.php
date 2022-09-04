@@ -2,19 +2,16 @@
     class Home extends Controllers{
         public function __construct()
         {
-            Auth::noAuth();
-            Permisos::getPermisos(HOME);
+            // Auth::noAuth();
+            // Permisos::getPermisos(PERFIL);
             parent::__construct();
 
         }
 
-        public function home()
+        public function Home()
         {
-            $data['page_id'] = 1;
-            $data['page_tag'] = "Home";
-            $data['page_title'] = "Página principal";
-            $data['page_name'] = "home";
-            $data['style_css'] = "/home.css";
+            $data['page_name'] = "Perfil de usuario";
+            $data['function_js'] = '/perfil.js';
             $this->views->getView($this,"home",$data);
         }
 

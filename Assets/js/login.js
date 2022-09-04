@@ -1,3 +1,5 @@
+
+
 $(".email-signup").hide();
 $("#signup-box-link").click(function(){
   $(".email-login").fadeOut(100);
@@ -13,12 +15,14 @@ $("#login-box-link").click(function(){
 });
 
 
+
 document.querySelector('#loginForm').addEventListener('submit', function(e){
     e.preventDefault();
     login()
 })
 
 async function login(){
+    // alert("esta es la funcion del login");
     let loginForm = document.querySelector('#loginForm');
     const datos = new FormData(loginForm);
     try {
@@ -27,6 +31,53 @@ async function login(){
             method: "POST",
             body: datos
         })
+        console.log(res);
+        const result = await res.json();
+        
+        if(result.error){
+            new Noty({
+                type: 'error',
+                theme: 'metroui',
+                text: `${result.error}`,
+                timeout: 2000,
+            }).show();
+        }else{
+            new Noty({
+                type: 'success',
+                theme: 'metroui',
+                text: `${result.msg}`,
+                timeout: 2000,
+            }).show();
+
+            setTimeout(()=>{
+                window.location.href = `${base_url}/Home`;
+            },2500);
+
+        }
+
+        
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+
+document.querySelector('#signUpForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    signUp()
+})
+
+async function signUp(){
+    // alert("esta es la funcion del signUp");
+    let signupForm = document.querySelector('#signUpForm');
+    const datos = new FormData(signupForm);
+    try {
+        const url = `${base_url}/Login/save`;
+        const res = await fetch(url, {
+            method: "POST",
+            body: datos
+        })
+        console.log(res);
         const result = await res.json();
         
         if(result.error){

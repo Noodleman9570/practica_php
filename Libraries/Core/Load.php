@@ -8,6 +8,7 @@
         $controller = new $controller();
         if(method_exists($controller, $method))
         {
+            error_log("Load::carga de controlador-> $controllerFile y el metodo -> $method");
             $controller->{$method}($params);
             
         }else{

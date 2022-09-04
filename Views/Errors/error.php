@@ -1,4 +1,4 @@
-<?php headerAdmin($data); ?>
+
     <main class="app-content">
       <div class="page-error tile">
         <h1><i class="fa fa-exclamation-circle"></i> Error 404: Page not found</h1>
@@ -6,4 +6,3 @@
         <p><a class="btn btn-primary" href="javascript:window.history.back();">Go Back</a></p>
       </div>
     </main>
-<?php footerAdmin($data); ?>

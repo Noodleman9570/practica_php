@@ -1,7 +1,7 @@
 <?php
 
     // define("BASE_URL", "http://localhost/Curso%20POO%20Abel%20OS/Hospital")
-    const BASE_URL = "http://192.168.1.2/practica_php_2";
+    const BASE_URL = "http://192.168.1.2/practica_php";
 
     //Zona horaria
     date_default_timezone_set('America/Caracas');
@@ -18,11 +18,11 @@
     const ROLES = 14;
 
     //Datos de conexion a base de datos
-    const DB_HOST = "localhost";
-    const DB_NAME = "SIM_BD_COM";
-    const DB_USER = "root";
-    const DB_PASSWORD = "";
-    const DB_CHARSET = "charset=utf8";
+    const DB_HOST = "192.168.1.2:3306";
+    const DB_NAME = "movies_database";
+    const DB_USER = "kevin_laptop";
+    const DB_PASSWORD = "Kevin$9570";
+    const DB_CHARSET = "utf8mb4";
 
     //Directorios de las librerias
 
@@ -52,21 +52,22 @@
     // Informacion del sitio
 
     define('SITE_CHARSET', 'UTF-8');
-    define('SITE_NAME', 'Hospital RF');
+    define('SITE_NAME', 'Cinema Space');
     define('SITE_LANG', 'es');
     define('SITE_VERSION', '1.0.0');
     define('SITE_LOGO', '/logo.png');
     define('SITE_FAVICON', '/favicon.ico');
-    define('SITE_DESC', 'Kevin-Abel-Luis FRAMEWORK');
+    define('SITE_DESC', 'Cinema Space');
     define('SITE_LOGO_MAIN', 'main_logo.png');
+    define('SITE_AUTHORS', 'Abraham/Jorfren/Kevin/Luis');
 
     // Imagenes del sitio
     define('HOME_IMG', IMAGE_PATH."/home");
 
     // Controller y method default
 
-    define('CONTROLLER_DEFAULT', 'login');
-    define('METHOD_DEFAULT', 'login');
+    define('CONTROLLER_DEFAULT', 'home');
+    define('METHOD_DEFAULT', 'home');
 
     //Deliminadores decimal y millar Ej. 24,1345.00
     const SPD = ",";
