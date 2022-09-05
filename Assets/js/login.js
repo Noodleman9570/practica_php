@@ -72,7 +72,7 @@ async function signUp(){
     let signupForm = document.querySelector('#signUpForm');
     const datos = new FormData(signupForm);
     try {
-        const url = `${base_url}/Login/save`;
+        const url = `${base_url}/Login/signup`;
         const res = await fetch(url, {
             method: "POST",
             body: datos

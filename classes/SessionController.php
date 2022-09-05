@@ -5,7 +5,7 @@
 class SessionController extends Controllers{
 
     private $userSession;
-    private $username;
+    private $email;
     private $userid;
 
     private $session;
@@ -24,9 +24,9 @@ class SessionController extends Controllers{
         return $this->userSession;
     }
 
-    public function getUsername()
+    public function getEmail()
     {
-        return $this->username;
+        return $this->email;
     }
 
     public function getUserId()
@@ -74,7 +74,7 @@ class SessionController extends Controllers{
         if($this->existsSession()){
             $role = $this->getUserSessionData()->getRole();
 
-            error_log("sessionController::validateSession(): username:" . $this->user->getUsername() . " - role: " . $this->user->getRole());
+            error_log("sessionController::validateSession(): email:" . $this->user->getEmail() . " - role: " . $this->user->getRole());
             if($this->isPublic()){
                 $this->redirectDefaultSiteByRole($role);
                 error_log( "SessionController::validateSession() => sitio público, redirige al main de cada rol" );
@@ -127,7 +127,7 @@ class SessionController extends Controllers{
         $id = $this->session->getCurrentUser();
         $this->user = new UserModel();
         $this->user->get($id);
-        error_log("sessionController::getUserSessionData(): " . $this->user->getUsername());
+        error_log("sessionController::getUserSessionData(): " . $this->user->getEmail());
         return $this->user;
     }
 

@@ -19,30 +19,42 @@
         
         }
 
-    function getPOST($name)
+        function existPOST($params)
     {
-        return $_POST[$name];
+        foreach ($params as $param ) {
+            if(!isset($_POST[$param])){
+                error_log('CONTROLLER::existsPOST => No existe el parametro' . $param);
+                return false;
+            }
+            error_log('CONTROLLER::existPOST => Si existe parametros' . $param);
+            return true;
+        }
     }
 
-    function getGET($name)
-    {
-        return $_GET[$name];
-    }
+        function getPOST($name)
+        {
+            return $_POST[$name];
+        }
 
-    function redirect($url, $mensajes = [])
-    {
-        $data = [];
-        $params = '';
-        
-        foreach ($mensajes as $key => $value) {
-            array_push($data, $key . '=' . $value);
+        function getGET($name)
+        {
+            return $_GET[$name];
         }
-        $params = join('&', $data);
-        
-        if($params != ''){
-            $params = '?' . $params;
+
+        function redirect($url, $mensajes = [])
+        {
+            $data = [];
+            $params = '';
+            
+            foreach ($mensajes as $key => $value) {
+                array_push($data, $key . '=' . $value);
+            }
+            $params = join('&', $data);
+            
+            if($params != ''){
+                $params = '?' . $params;
+            }
+            header('location: ' . constant('URL') . $url . $params);
         }
-        header('location: ' . constant('URL') . $url . $params);
-    }
     }
 ?>
