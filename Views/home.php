@@ -145,9 +145,12 @@
                                             <!--PRICE START-->
                                             <div class="generic_price_tag clearfix">	
                                                 <span class="price">
-                                                    <span class="sign">$</span>
-                                                    <span class="currency">10</span>
-                                                    <span class="cent">.99</span>
+                                                    <div class="price_container">
+                                                        <div class="del_line"></div>
+                                                        <span class="sign">$</span>
+                                                        <span class="currency">10</span>
+                                                        <span class="cent">.99</span>
+                                                    </div>
                                                     <span class="month">/MENSUALES</span>
                                                 </span>
                                             </div>

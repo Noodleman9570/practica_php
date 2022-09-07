@@ -1,7 +1,7 @@
 <?php
 
     // define("BASE_URL", "http://localhost/Curso%20POO%20Abel%20OS/Hospital")
-    const BASE_URL = "http://192.168.1.2/practica_php";
+    const BASE_URL = "http://localhost/practica_php";
 
     //Zona horaria
     date_default_timezone_set('America/Caracas');
@@ -18,10 +18,10 @@
     const ROLES = 14;
 
     //Datos de conexion a base de datos
-    const DB_HOST = "192.168.1.2:3306";
+    const DB_HOST = "localhost";
     const DB_NAME = "movies_database";
-    const DB_USER = "kevin_laptop";
-    const DB_PASSWORD = "Kevin$9570";
+    const DB_USER = "root";
+    const DB_PASSWORD = "";
     const DB_CHARSET = "utf8mb4";
 
     //Directorios de las librerias
