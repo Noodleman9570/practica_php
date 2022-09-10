@@ -4,7 +4,7 @@
     {
         public function logout()
         {
-            Auth::logout();
+            
         }
 
     }

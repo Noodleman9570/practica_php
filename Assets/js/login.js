@@ -26,13 +26,13 @@ async function login(){
     let loginForm = document.querySelector('#loginForm');
     const datos = new FormData(loginForm);
     try {
-        const url = `${base_url}/Login/access`;
+        const url = `${base_url}/Login/authenticate`;
         const res = await fetch(url, {
             method: "POST",
             body: datos
         })
-        console.log(res);
         const result = await res.json();
+        console.log(result.error);
         
         if(result.error){
             new Noty({
@@ -50,7 +50,7 @@ async function login(){
             }).show();
 
             setTimeout(()=>{
-                window.location.href = `${base_url}/Home`;
+                window.location.href = `${base_url}/Dashboard`;
             },2500);
 
         }

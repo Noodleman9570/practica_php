@@ -2,8 +2,6 @@
     class Home extends Controllers{
         public function __construct()
         {
-            // Auth::noAuth();
-            // Permisos::getPermisos(PERFIL);
             parent::__construct();
 
         }

@@ -2,13 +2,13 @@
 
 class UserModel extends Model implements Imodel{
 
-    private $id;
-    private $email;
-    private $password;
-    private $role;
-    private $budget;
-    private $photo;
-    private $name;
+    private int $id;
+    private string $email;
+    private string $password;
+    private string $role;
+    private float $budget;
+    private string $photo;
+    private string $name;
 
     public function __construct()
     {
@@ -174,12 +174,12 @@ class UserModel extends Model implements Imodel{
         }
     }
 
-    public function setId($id){             $this->id = $id;}
-    public function setEmail($usrn){     $this->email = $usrn;}
-    public function setRole($role){         $this->role = $role;}
-    public function setBudget($bdgt){       $this->budget = $bdgt;}
-    public function setPhoto($photo){       $this->photo = $photo;}
-    public function setName($name){         $this->name = $name;}
+    public function setId(int $id){             $this->id = $id;}
+    public function setEmail(string $email){     $this->email = $email;}
+    public function setRole(string $role){         $this->role = $role;}
+    public function setBudget(float $bdgt){       $this->budget = $bdgt;}
+    public function setPhoto(string $photo){       $this->photo = $photo;}
+    public function setName(string $name){         $this->name = $name;}
 
     public function setPassword($pass)
     {     

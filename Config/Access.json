@@ -38,7 +38,7 @@
     ],
 
     "default-sites":{
-        "user": "dashboard",
+        "user": "Dashboard",
         "admin": "admin"
     }
 }

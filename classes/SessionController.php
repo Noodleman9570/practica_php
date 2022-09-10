@@ -131,11 +131,13 @@ class SessionController extends Controllers{
         return $this->user;
     }
 
-    public function initialize($user)
+    public function initialize(UserModel $user)
     {
-        error_log("sessionController::initialize(): user: " . $user->getUsername());
+        error_log("sessionController::initialize(): user: " . $user->getEmail());
         $this->session->setCurrentUser($user->getId());
         $this->authorizeAccess($user->getRole());
+
+        return 0;
     }
 
     private function isPublic()
