@@ -1307,6 +1307,34 @@
 		position: relative;
 		padding: 10px;
 	}
+
+  .price {
+    position: relative;
+  }
+
+  .del_line{
+    left: 100px;
+    top: 30px;
+    rotate: 25deg;
+    background: red;
+    width: 90px;
+    height: 4px;
+    position: absolute;
+  }
+
   
   }
+
+  .price {
+    position: relative;
+  }
   
+  .del_line{
+    left: 60px;
+    top: 30px;
+    rotate: 25deg;
+    background: red;
+    width: 90px;
+    height: 4px;
+    position: absolute;
+  }
