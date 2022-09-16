@@ -1,7 +1,7 @@
 <?php
 
     // define("BASE_URL", "http://localhost/Curso%20POO%20Abel%20OS/Hospital")
-    const BASE_URL = "http://localhost/practica_php";
+    const BASE_URL = "http://192.168.1.2/practica_php";
 
     //Zona horaria
     date_default_timezone_set('America/Caracas');
@@ -45,6 +45,11 @@
     define('UPLOADS', IMG."/uploads"); 
     define('FAVICON', ASSETS."/app/favicon");
     define('DATATABLE', PLUGINS."/DataTables");
+
+    //Iconos SVGs de fontawesome
+    define('FONTAW_BRA', PLUGINS."/fontawesome/brands"); // Iconos de empresas fontawesome
+    define('FONTAW_REG', PLUGINS."/fontawesome/regular"); // Iconos regulares de fontawesome
+    define('FONTAW_SOL', PLUGINS."/fontawesome/solid"); // Iconos soledos de fontawesome
 
     //Directorios de la app
     define('APP', ASSETS."/app");
